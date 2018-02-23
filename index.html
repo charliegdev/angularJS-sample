@@ -4,8 +4,15 @@
         <title>Hello AngularJS</title>
         <script src="/node_modules/angular/angular.js"></script>
     </head>
-<body ng-controller="MainCtrl">
-    <p>Hello {{1 + 1}}nd time AngularJS</p>
+<body ng-controller="MainCtrl as ctrl">
+    <div ng-repeat="note in ctrl.notes">
+        <span class="label">{{note.label}}</span>
+        <span class="status"> {{note.done}}</span>
+    </div>
+
+
+
+
     <script src="app.js"></script>
 </body>
 </html>
