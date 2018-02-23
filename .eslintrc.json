@@ -20,25 +20,12 @@
                 "args": "none"
             }
         ],
-        "no-console": ["error", {
-            "allow": ["warn", "error", "debug"]
-        }],
         "no-var": "error",
-        "prefer-const": "error"
+        "prefer-const": "error",
+        "no-console": "off"
     },
     "globals": {
         "angular": false,
-        "io": false,
-        "TimelineMax": false,
-        "webkit": false,
-        "$": false,
-        "md5": false,
-        "BWBI": false,
-        "TweenMax": false,
-        "Linear": false,
-        "spine": false,
-        "Bounce": false,
-        "Elastic": false,
-        "bowser": false
+        "$": false
     }
 }
