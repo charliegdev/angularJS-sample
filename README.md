@@ -1,0 +1,2 @@
+# AngularJS Sample Project
+This project follows [AngularJS: Up and Running](https://www.safaribooksonline.com/library/view/angularjs-up-and/9781491901939/), and is a sample of what I built following the book.

@@ -1,0 +1,9 @@
+{
+    "eslint.run": "onSave",
+    "editor.fontSize": 16,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/HTML5/es5": true
+    }
+}

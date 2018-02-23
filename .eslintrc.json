@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error",
+            4, {
+                "SwitchCase": 1
+            }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-unused-vars": [
+            "error", {
+                "args": "none"
+            }
+        ],
+        "no-console": ["error", {
+            "allow": ["warn", "error", "debug"]
+        }],
+        "no-var": "error",
+        "prefer-const": "error"
+    },
+    "globals": {
+        "angular": false,
+        "io": false,
+        "TimelineMax": false,
+        "webkit": false,
+        "$": false,
+        "md5": false,
+        "BWBI": false,
+        "TweenMax": false,
+        "Linear": false,
+        "spine": false,
+        "Bounce": false,
+        "Elastic": false,
+        "bowser": false
+    }
+}
