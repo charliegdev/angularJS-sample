@@ -2,17 +2,14 @@
 <html ng-app="notesApp">
     <head>
         <title>Hello AngularJS</title>
+        <link rel="stylesheet" href="style.css">
         <script src="/node_modules/angular/angular.js"></script>
     </head>
 <body ng-controller="MainCtrl as ctrl">
-    <div ng-repeat="note in ctrl.notes">
+    <div ng-repeat="(author, note) in ctrl.notes" ng-class="note.done ? 'done' : 'pending'">
         <span class="label">{{note.label}}</span>
-        <span class="status"> {{note.done}}</span>
+        <span class="author" ng-bind="author"></span>
     </div>
-
-
-
-
     <script src="app.js"></script>
 </body>
 </html>
