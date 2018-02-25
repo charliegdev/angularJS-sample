@@ -10,8 +10,8 @@
     <title>Hello AngularJS</title>
 </head>
 
-<body ng-controller="MainCtrl as ctrl">
-    <div class="container-fluid">
+<body>
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
                 <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -50,12 +50,20 @@
                 </form>
             </div>
         </nav>
-        <button type="button" class="btn btn-primary" ng-click="ctrl.changeNotes()">Change Notes</button>
-        <br />
-        <p>DOM Elements change every time someone clicks.</p>
-        <div ng-repeat="(author, note) in ctrl.notes" ng-class="note.done ? 'done' : 'pending'">
-            <span class="label">{{note.label}}</span>
-            <span class="author" ng-bind="author"></span>
+
+
+        <div ng-controller="MainCtrl as ctrl">
+            <br>
+            <button type="button" class="btn btn-primary" ng-click="ctrl.changeNotes()">Change Notes</button>
+            <span>DOM Elements change every time someone clicks.</span>
+            <br>
+            <br>
+            <ul ng-repeat="(author, note) in ctrl.notes" class="list-group">
+                <li class="list-group-item" ng-class="note.done ? 'list-group-item-success' : 'list-group-item-warning'">
+                    <span class="label">{{note.label}}</span>
+                    <span class="author" ng-bind="author"></span>
+                </li>
+            </ul>
         </div>
     </div>
 
