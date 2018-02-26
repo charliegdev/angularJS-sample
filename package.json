@@ -13,6 +13,11 @@
     "babel": "^6.23.0"
   },
   "devDependencies": {
-    "eslint": "^4.18.1"
+    "angular-mocks": "^1.6.9",
+    "eslint": "^4.18.1",
+    "jasmine-core": "^2.99.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1"
   }
 }

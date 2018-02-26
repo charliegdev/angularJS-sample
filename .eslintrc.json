@@ -26,6 +26,12 @@
     },
     "globals": {
         "angular": false,
-        "$": false
+        "$": false,
+        "module": false,
+        "describe": false,
+        "beforeEach": false,
+        "inject": false,
+        "it": false,
+        "expect": false
     }
 }
