@@ -54,21 +54,15 @@
 
         <div ng-controller="MainCtrl as ctrl">
             <br>
-            <button type="button" class="btn btn-primary" ng-click="ctrl.changeNotes()">Change Notes</button>
-            <span>DOM Elements change every time someone clicks.</span>
-            <br><br>
-
-            <table class="table table-dark" ng-cloak>
-                <tr ng-repeat-start="note in ctrl.notes" class="bg-info">
-                    <td>{{note.id}}</td>
-                </tr>
-                <tr>
-                    <td>{{note.label}}</td>
-                </tr>
-                <tr ng-repeat-end>
-                    <td>{{note.done}}</td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="example-input">Type your login info</label>
+                <input type="text" class="form-control" id="example-input" placeholder="Username" ng-model="ctrl.username">
+                <br>
+                <input type="password" class="form-control" id="example-input" placeholder="Password" ng-model="ctrl.password">
+                <br>
+                <button type="button" class="btn btn-warning" ng-click="ctrl.change()">Reset</button>
+                <button type="button" class="btn btn-success" ng-click="ctrl.submit()">Submit</button>
+            </div>
         </div>
     </div>
 

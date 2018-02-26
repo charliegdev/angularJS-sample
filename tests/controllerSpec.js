@@ -1,10 +1,10 @@
-describe("Controller: ListCtrl", function () {
+describe("Controller: MainCtrl", function () {
     beforeEach(module("notesApp"));
 
     let ctrl;
 
     beforeEach(inject(($controller) => {
-        ctrl = $controller("ListCtrl");
+        ctrl = $controller("MainCtrl");
     }));
 
     it("should have items available on load", () => {

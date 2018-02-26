@@ -1,13 +1,14 @@
-angular.module("notesApp", []).controller("ListCtrl", [function () {
-    this.items = [
-        { id: 1, label: "First", done: true },
-        { id: 2, label: "Second", done: false }
-    ];
+angular.module("notesApp", []).controller("MainCtrl", [function () {
+    this.username = '';
+    this.password = '';
 
-    this.getDoneClass = (item) => {
-        return {
-            finished: item.done,
-            unfinished: !item.done
-        };
+    this.change = () => {
+        this.username = '';
+        this.password = '';
     };
+
+    this.submit = () => {
+        alert(this.username + " " + this.password);
+    };
+
 }]);
