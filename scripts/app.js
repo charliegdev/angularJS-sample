@@ -1,20 +1,13 @@
-angular.module("notesApp", []).controller("MainCtrl", [function () {
-    this.notes = [
-        {
-            id: 1,
-            label: "First Note",
-            done: false,
-            someRandom: 31431
-        },
-        {
-            id: 2,
-            label: "Second Note",
-            done: false
-        },
-        {
-            id: 3,
-            label: "Finished Third Note",
-            done: true
-        }
+angular.module("notesApp", []).controller("ListCtrl", [function () {
+    this.items = [
+        { id: 1, label: "First", done: true },
+        { id: 2, label: "Second", done: false }
     ];
+
+    this.getDoneClass = (item) => {
+        return {
+            finished: item.done,
+            unfinished: !item.done
+        };
+    };
 }]);

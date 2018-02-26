@@ -27,6 +27,11 @@
     "globals": {
         "angular": false,
         "$": false,
-        "module": false
+        "module": false,
+        "describe": false,
+        "beforeEach": false,
+        "inject": false,
+        "it": false,
+        "expect": false
     }
 }
