@@ -1,14 +1,17 @@
 angular.module("notesApp", []).controller("MainCtrl", [function () {
-    this.username = '';
-    this.password = '';
+    this.user = {
+        username: "",
+        password: ""
+    };
 
-    this.change = () => {
-        this.username = '';
-        this.password = '';
+    this.reset = () => {
+        this.user = {
+            username: "",
+            password: ""
+        };
     };
 
     this.submit = () => {
-        alert(this.username + " " + this.password);
+        console.log(this.user);
     };
-
 }]);
