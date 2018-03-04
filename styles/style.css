@@ -1,3 +1,4 @@
+/* These classes will be added to elements by Angular when validation happens. */
 .username.ng-valid {
     background-color: lightgreen;
 }

@@ -54,11 +54,22 @@
 
         <div ng-controller="MainCtrl as ctrl">
             <br>
-            <form class="form-group" ng-submit="ctrl.submit()" name="myForm">
+            <form novalidate name="myForm" class="form-group">
                 <label for="uname">Type your login info</label>
-                <input type="text" name="uname" class="form-control username" placeholder="Username" ng-model="ctrl.user.username" required ng-minlength="4">
+                <input type="text" required="" ng-minlength="4" name="uname" class="form-control username" placeholder="Username" ng-model="ctrl.user.username">
                 <br>
-                <input type="password" name="pwd" class="form-control" placeholder="Password" ng-model="ctrl.user.password" required>
+                <input required="" type="password" name="pwd" class="form-control password" placeholder="Password" ng-model="ctrl.user.password">
+                <br>
+                <ng-form name="profile">
+                    <input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="ctrl.user.profile.firstName" required>
+                    <input type="text" name="middleName" class="form-control" placeholder="Middle Name" ng-model="ctrl.user.profile.middleName">
+                    <input type="date" name="dob" class="form-control" placeholder="Date of Birth" ng-model="ctrl.user.profile.dob">
+                </ng-form>
+
+                <small class="form-text text-muted"ng-show="myForm.profile.$invalid">
+                    Please fill out the profile information.
+                </small>
+
                 <br>
                 <button type="button" class="btn btn-warning" ng-click="ctrl.reset()">Reset</button>
                 <button type="submit" class="btn btn-success" ng-disabled="myForm.$invalid">Submit</button>
@@ -66,10 +77,10 @@
         </div>
     </div>
 
-    <script src="scripts/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
