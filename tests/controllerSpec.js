@@ -1,29 +1,29 @@
-describe("Controller: ListCtrl", function () {
+describe("Controller: MainCtrl", function () {
     beforeEach(module("notesApp"));
 
     let ctrl;
 
     beforeEach(inject(($controller) => {
-        ctrl = $controller("ListCtrl");
+        ctrl = $controller("MainCtrl");
     }));
 
-    it("should have items available on load", () => {
-        expect(ctrl.items).toEqual([
-            { id: 1, label: "First", done: true },
-            { id: 2, label: "Second", done: false }
-        ]);
+    it("should have an empty user object ready", () => {
+        expect(ctrl.user).toEqual({
+            username: "",
+            password: ""
+        });
     });
 
-    it("should have highlight items based on state", () => {
-        const item = { id: 1, label: "First", done: true };
+    it("should clear user object if reset function is called", () => {
+        ctrl.user = {
+            username: "test",
+            password: "1324"
+        };
 
-        let actualClass = ctrl.getDoneClass(item);
-        expect(actualClass.finished).toBeTruthy();
-        expect(actualClass.unfinished).toBeFalsy();
-
-        item.done = false;
-        actualClass = ctrl.getDoneClass(item);
-        expect(actualClass.finished).toBeFalsy();
-        expect(actualClass.unfinished).toBeTruthy();
+        ctrl.reset();
+        expect(ctrl.user).toEqual({
+            username: "",
+            password: ""
+        });
     });
 });

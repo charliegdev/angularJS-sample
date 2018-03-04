@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="/node_modules/angular/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
 
     <title>Hello AngularJS</title>
 </head>
@@ -54,28 +54,33 @@
 
         <div ng-controller="MainCtrl as ctrl">
             <br>
-            <button type="button" class="btn btn-primary" ng-click="ctrl.changeNotes()">Change Notes</button>
-            <span>DOM Elements change every time someone clicks.</span>
-            <br><br>
+            <form novalidate name="myForm" class="form-group">
+                <label for="uname">Type your login info</label>
+                <input type="text" required="" ng-minlength="4" name="uname" class="form-control username" placeholder="Username" ng-model="ctrl.user.username">
+                <br>
+                <input required="" type="password" name="pwd" class="form-control password" placeholder="Password" ng-model="ctrl.user.password">
+                <br>
+                <ng-form name="profile">
+                    <input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="ctrl.user.profile.firstName" required>
+                    <input type="text" name="middleName" class="form-control" placeholder="Middle Name" ng-model="ctrl.user.profile.middleName">
+                    <input type="date" name="dob" class="form-control" placeholder="Date of Birth" ng-model="ctrl.user.profile.dob">
+                </ng-form>
 
-            <table class="table table-dark" ng-cloak>
-                <tr ng-repeat-start="note in ctrl.notes" class="bg-info">
-                    <td>{{note.id}}</td>
-                </tr>
-                <tr>
-                    <td>{{note.label}}</td>
-                </tr>
-                <tr ng-repeat-end>
-                    <td>{{note.done}}</td>
-                </tr>
-            </table>
+                <small class="form-text text-muted"ng-show="myForm.profile.$invalid">
+                    Please fill out the profile information.
+                </small>
+
+                <br>
+                <button type="button" class="btn btn-warning" ng-click="ctrl.reset()">Reset</button>
+                <button type="submit" class="btn btn-success" ng-disabled="myForm.$invalid">Submit</button>
+            </form>
         </div>
     </div>
 
-    <script src="scripts/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
 </body>
 
 </html>
