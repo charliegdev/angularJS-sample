@@ -55,12 +55,14 @@
         <div ng-controller="MainCtrl as ctrl">
             <br>
             <form class="form-group" ng-submit="ctrl.submit()" name="myForm">
-                <label for="example-input">Type your login info</label>
-                <input type="text" class="form-control" placeholder="Username" ng-model="ctrl.user.username"
-                    required ng-minlength="4">
+                <label for="uname">Type your login info</label>
+                <input type="text" name="uname" class="form-control" placeholder="Username" ng-model="ctrl.user.username" required ng-minlength="4">
+                <span ng-show="myForm.uname.$error.required">This is a required field.</span>
+                <span ng-show="myForm.uname.$error.minlength">Minimal length is 4.</span>
+                <span ng-show="myForm.uname.$invalid">Invalid field.</span>
                 <br>
-                <input type="password" class="form-control" placeholder="Password" ng-model="ctrl.user.password">
-                <input type="date" class="form-control" placeholder="date" ng-model="ctrl.user.password">
+                <input type="password" name="pwd" class="form-control" placeholder="Password" ng-model="ctrl.user.password" required>
+                <span ng-show="myForm.pwd.$error.required">This is a required field.</span>
                 <br>
                 <button type="button" class="btn btn-warning" ng-click="ctrl.reset()">Reset</button>
                 <button type="submit" class="btn btn-success" ng-disabled="myForm.$invalid">Submit</button>
