@@ -5,7 +5,7 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const app            = express();
 
-app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
+app.use(express.static(__dirname, { index: "index.html"})); 	// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); 					// log every request to the console
 app.use(bodyParser()); 						// pull information from html in POST
 app.use(methodOverride()); 					// simulate DELETE and PUT
@@ -56,6 +56,7 @@ router.get('/note/:id', function(req, res) {
     }
     res.send({msg: 'Note not found'}, 404);
 });
+
 router.post('/note/:id', function(req, res) {
     for (let i = 0; i < notes.length; i++) {
         if (notes[i].id == req.params.id) {
