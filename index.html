@@ -55,7 +55,38 @@
         <div ng-controller="MainCtrl as mainCtrl">
             <br>
             <h1>Hello Services!</h1>
-            <button type="button" class="btn btn-primary" ng-click="mainCtrl.logStuff()">$log.log</button>
+
+            <button type="button" class="btn btn-primary" ng-click="mainCtrl.open('first')">Open First</button>
+            <button type="button" class="btn btn-secondary" ng-click="mainCtrl.open('second')">Open Second</button>
+
+            <br><br>
+            <div ng-switch="mainCtrl.tab" ng-cloak>
+                <div ng-switch-when="first">
+                    <div ng-controller="SubCtrl as ctrl">
+                        <h3>First tab</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in ctrl.list()">
+                                <span>{{item.label}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <button type="button" class="btn btn-success" ng-click="ctrl.add()">Add More Items</button>
+                    </div>
+                </div>
+
+                <div ng-switch-when="second">
+                    <div ng-controller="SubCtrl as ctrl">
+                        <h3>Second tab</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in ctrl.list()">
+                                <span>{{item.label}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <button type="button" class="btn btn-success" ng-click="ctrl.add()">Add More Items</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
