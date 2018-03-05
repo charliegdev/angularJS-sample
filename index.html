@@ -52,28 +52,41 @@
             </div>
         </nav>
 
-        <div ng-controller="MainCtrl as ctrl">
+        <div ng-controller="MainCtrl as mainCtrl">
             <br>
-            <form novalidate name="myForm" class="form-group">
-                <label for="uname">Type your login info</label>
-                <input type="text" required="" ng-minlength="4" name="uname" class="form-control username" placeholder="Username" ng-model="ctrl.user.username">
-                <br>
-                <input required="" type="password" name="pwd" class="form-control password" placeholder="Password" ng-model="ctrl.user.password">
-                <br>
-                <ng-form name="profile">
-                    <input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="ctrl.user.profile.firstName" required>
-                    <input type="text" name="middleName" class="form-control" placeholder="Middle Name" ng-model="ctrl.user.profile.middleName">
-                    <input type="date" name="dob" class="form-control" placeholder="Date of Birth" ng-model="ctrl.user.profile.dob">
-                </ng-form>
+            <h1>Hello Services!</h1>
 
-                <small class="form-text text-muted"ng-show="myForm.profile.$invalid">
-                    Please fill out the profile information.
-                </small>
+            <button type="button" class="btn btn-primary" ng-click="mainCtrl.open('first')">Open First</button>
+            <button type="button" class="btn btn-secondary" ng-click="mainCtrl.open('second')">Open Second</button>
 
-                <br>
-                <button type="button" class="btn btn-warning" ng-click="ctrl.reset()">Reset</button>
-                <button type="submit" class="btn btn-success" ng-disabled="myForm.$invalid">Submit</button>
-            </form>
+            <br><br>
+            <div ng-switch="mainCtrl.tab" ng-cloak>
+                <div ng-switch-when="first">
+                    <div ng-controller="SubCtrl as ctrl">
+                        <h3>First tab</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in ctrl.list()">
+                                <span>{{item.label}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <button type="button" class="btn btn-success" ng-click="ctrl.add()">Add More Items</button>
+                    </div>
+                </div>
+
+                <div ng-switch-when="second">
+                    <div ng-controller="SubCtrl as ctrl">
+                        <h3>Second tab</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in ctrl.list()">
+                                <span>{{item.label}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <button type="button" class="btn btn-success" ng-click="ctrl.add()">Add More Items</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
