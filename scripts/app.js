@@ -1,34 +1,29 @@
 angular.module("notesApp", []);
 
-angular.module("notesApp").controller("MainCtrl", [function () {
-    this.tab = "first";
-    this.open = newTab => {
-        this.tab = newTab;
-    };
-}]);
+angular.module("notesApp").controller("MainCtrl", ["$http", "$log", function ($http, $log) {
+    this.items = [];
+    this.newTodo = {};
 
-angular.module("notesApp").controller("SubCtrl", ["ItemService", function (ItemService) {
-    this.list = () => ItemService.list();
-    this.add = () => {
-        ItemService.add({
-            id: this.list().length + 1,
-            label: "Item " + this.list().length
+    const fetchTodos = () => {
+        return $http.get("/api/note").then(response => {
+            this.items = response.data;
+        }, error => {
+            $log.debug(error);
         });
     };
-}]);
 
-angular.module("notesApp").factory("ItemService", [function () {
-    const items = [
-        { id: 1, label: "Item 0" },
-        { id: 2, label: "Item 1" }
-    ];
-
-    return {
-        list: function () {
-            return items;
-        },
-        add: function (item) {
-            items.push(item);
-        }
+    fetchTodos();
+    
+    this.add = () => {
+        $http.post("/api/note", this.newTodo).then(fetchTodos).then(response => {
+            this.newTodo = {};
+        });
     };
+
+    $http.get("/api/note").then(response => {
+        this.items = response.data;
+    }, err => {
+        $log.debug(err);
+    });
+
 }]);
