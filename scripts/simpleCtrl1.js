@@ -1,4 +1,4 @@
-angular.module("notesApp", []).controller("SimpleCtrl", ["$location", "$window", function ($location, $window) {
+angular.module("notesApp1", []).controller("SimpleCtrl", ["$location", "$window", function ($location, $window) {
     this.navigate1 = () => {
         $location.path("/some/where");
     };
