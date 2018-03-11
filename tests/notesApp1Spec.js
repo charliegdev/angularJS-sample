@@ -1,18 +1,10 @@
 describe("ItemCtrl with inline mock", function () {
+    let ctrl;
     beforeEach(module("notesApp"));
+    beforeEach(module("notesAppMocks"));
 
-    let ctrl, mockService;
-    beforeEach(module($provide => {
-        mockService = {
-            list: () => [{ id: 1, label: "Mock" }]
-        };
-
-        $provide.value("ItemService", mockService);
-
-    }));
-
-    beforeEach(inject($controller => {
-        ctrl = $controller("ItemCtrl");
+    beforeEach(inject($controller => { 
+        ctrl = $controller("ItemCtrl"); 
     }));
 
     it("should load mocked out items", () => {
