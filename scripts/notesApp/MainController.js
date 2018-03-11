@@ -1,6 +1,4 @@
-angular.module("notesApp", []);
-
-angular.module("notesApp").controller("MainCtrl", ["$http", "$log", function ($http, $log) {
+angular.module("notesApp").controller("MainController", ["$http", "$log", function ($http, $log) {
     this.items = [];
     this.newTodo = {};
 
@@ -26,21 +24,4 @@ angular.module("notesApp").controller("MainCtrl", ["$http", "$log", function ($h
         $log.debug(err);
     });
 
-}]);
-
-angular.module("notesApp").factory("ItemService", [function () {
-    const items = [
-        { id: 1, label: "Item 0" },
-        { id: 2, label: "Item 1" }
-    ];
-    return {
-        list: () => items,
-        add: item => {
-            items.push(item);
-        }
-    };
-}]);
-
-angular.module("notesApp").controller("ItemCtrl", ["ItemService", function (ItemService) {
-    this.items = ItemService.list();
 }]);
