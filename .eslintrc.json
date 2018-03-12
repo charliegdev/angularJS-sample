@@ -1,9 +1,16 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true,
+        "jasmine": true,
+        "jquery": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended", 
+        "plugin:angular/johnpapa"
+    ],
+    "plugins": ["angular"],
     "rules": {
         "indent": [
             "error",
@@ -22,17 +29,13 @@
         ],
         "no-var": "error",
         "prefer-const": "error",
-        "no-console": "off"
+        "no-console": "off",
+        "angular/file-name": 2,
+        "angular/controller-as-vm": "off"
     },
     "globals": {
         "angular": false,
-        "$": false,
-        "module": false,
-        "describe": false,
-        "beforeEach": false,
         "inject": false,
-        "it": false,
-        "expect": false,
         "require": false,
         "__dirname": false
     }

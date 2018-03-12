@@ -1,6 +1,4 @@
-angular.module("notesApp", []);
-
-angular.module("notesApp").controller("MainCtrl", ["$http", "$log", function ($http, $log) {
+angular.module("notesApp").controller("MainController", ["$http", "$log", function ($http, $log) {
     this.items = [];
     this.newTodo = {};
 

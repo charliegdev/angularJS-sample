@@ -1,0 +1,1 @@
+angular.module("notesAppMocks").factory("ItemService", () => ({ list: () => [{ id: 1, label: "Mock" }]}));

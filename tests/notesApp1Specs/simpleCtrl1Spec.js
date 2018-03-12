@@ -1,9 +1,9 @@
 describe("SimpleCtrl", function () {
-    beforeEach(module("notesApp"));
+    beforeEach(module("notesApp1"));
 
     let ctrl, $loc;
     beforeEach(inject(($controller, $location) => {
-        ctrl = $controller("SimpleCtrl");
+        ctrl = $controller("SimpleController");
         $loc = $location;
     }));
 

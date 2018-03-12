@@ -15,8 +15,18 @@ module.exports = function (config) {
         files: [
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
-            'scripts/*.js',
-            'tests/*.js'
+            'scripts/notesApp/notesApp.js',
+            'scripts/notesApp/!(notesApp).js',
+            'scripts/notesApp1/notesApp1.js',
+            'scripts/notesApp1/!(notesApp1).js',
+            'scripts/serverApp/serverApp.js',
+            'scripts/serverApp/!(serverApp).js',
+            'tests/notesAppSpecs/notesAppMocks.js',
+            'tests/notesAppSpecs/ItemService.js',
+            'tests/notesAppSpecs/*Spec.js',
+            'tests/notesAppSpecs/*Spies.js',
+            'tests/notesApp1Specs/*Spec.js',
+            'tests/serverAppSpecs/*Spec.js',
         ],
 
         // list of files / patterns to exclude
