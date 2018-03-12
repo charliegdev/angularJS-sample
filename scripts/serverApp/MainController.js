@@ -1,8 +1,8 @@
-angular.module("serverApp").controller("MainController", ["$http", function ($http) {
+angular.module("serverApp").controller("MainController", ["NoteService", function (NoteService) {
     this.items = [];
     this.errorMessage = "";
 
-    $http.get("/api/note").then(response => {
+    NoteService.query().then(response => {
         this.items = response.data;
     }, err => {
         this.errorMessage = err.data.msg;
