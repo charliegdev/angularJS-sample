@@ -4,7 +4,7 @@ describe("ItemCtrl with inline mock", function () {
     beforeEach(module("notesAppMocks"));
 
     beforeEach(inject($controller => { 
-        ctrl = $controller("ItemCtrl"); 
+        ctrl = $controller("ItemController"); 
     }));
 
     it("should load mocked out items", () => {

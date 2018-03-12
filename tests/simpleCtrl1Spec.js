@@ -3,7 +3,7 @@ describe("SimpleCtrl", function () {
 
     let ctrl, $loc;
     beforeEach(inject(($controller, $location) => {
-        ctrl = $controller("SimpleCtrl");
+        ctrl = $controller("SimpleController");
         $loc = $location;
     }));
 
