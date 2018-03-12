@@ -21,7 +21,8 @@ module.exports = function (config) {
             'scripts/notesApp1/!(notesApp1).js',
             'tests/notesAppMocks.js',
             'tests/ItemService.js',
-            'tests/*Spec.js'
+            'tests/*Spec.js',
+            'tests/*Spies.js'
         ],
 
         // list of files / patterns to exclude
