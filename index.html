@@ -57,20 +57,9 @@
             <h1>Hello Filters!</h1>
             <br><br>
 
-            <button class="btn btn-primary" ng-click="ctrl.currentFilter = 'string'">Filter with String</button>
-            <button class="btn btn-secondary" ng-click="ctrl.currentFilter = 'object'">Filter with Object</button>
-            <button class="btn btn-info" ng-click="ctrl.currentFilter = 'function'">Filter with Function</button>
-            <p>Filter Text</p>
+            <div>Start Time (Timestamp): {{ctrl.startTime}}</div>
 
-            <input type="text" class="form-control" ng-model="ctrl.filterOptions['string']">
-            <span>Show Done only</span>
-            <input type="checkbox" ng-model="ctrl.filterOptions['object'].done">
-            <ul>
-                <li ng-repeat="note in ctrl.notes | filter: ctrl.filterOptions[ctrl.currentFilter] | orderBy: ctrl.sortOrder | limitTo: 5">
-                    {{note.label}} - {{note.type}} - {{note.done}}
-                </li> 
-            </ul>
-
+            <div>Start Time (DateTime): {{ctrl.startTime | date:'medium'}}</div>
         </div>
     </div>
 
