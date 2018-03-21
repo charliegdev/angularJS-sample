@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="notesApp">
+<html lang="en" ng-app="filtersApp">
 
 <head>
     <meta charset="utf-8">
@@ -52,25 +52,24 @@
             </div>
         </nav>
 
-        <div ng-controller="ItemCtrl as mainCtrl">
+        <div ng-controller="FilterController as ctrl">
             <br>
-            <h1>Hello Servers!</h1>
-
+            <h1>Hello Filters!</h1>
             <br><br>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="todo in mainCtrl.items">
-                    {{todo.label}} - by {{todo.author}}
-                </li>
-            </ul>
 
-            <br>
-            <form name="addForm" ng-submit="mainCtrl.add()">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Label" ng-model="mainCtrl.newTodo.label" required>
-                    <input type="text" class="form-control" placeholder="Author" ng-model="mainCtrl.newTodo.author" required>
-                    <button class="btn btn-primary" type="submit" ng-disabled="addForm.$invalid">Add</button>
-                </div>
-            </form>
+            <button class="btn btn-primary" ng-click="ctrl.currentFilter = 'string'">Filter with String</button>
+            <button class="btn btn-secondary" ng-click="ctrl.currentFilter = 'object'">Filter with Object</button>
+            <button class="btn btn-info" ng-click="ctrl.currentFilter = 'function'">Filter with Function</button>
+            <p>Filter Text</p>
+
+            <input type="text" class="form-control" ng-model="ctrl.filterOptions['string']">
+            <span>Show Done only</span>
+            <input type="checkbox" ng-model="ctrl.filterOptions['object'].done">
+            <ul>
+                <li ng-repeat="note in ctrl.notes | filter: ctrl.filterOptions[ctrl.currentFilter] | orderBy: ctrl.sortOrder | limitTo: 5">
+                    {{note.label}} - {{note.type}} - {{note.done}}
+                </li> 
+            </ul>
 
         </div>
     </div>
@@ -78,7 +77,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/filtersApp/filtersApp.js"></script>
+    <script src="scripts/filtersApp/FilterController.js"></script>
 </body>
 
 </html>
