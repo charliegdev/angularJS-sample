@@ -58,8 +58,10 @@
             <br><br>
 
             <div>Start Time (Timestamp): {{ctrl.startTime}}</div>
-
             <div>Start Time (DateTime): {{ctrl.startTime | date:'medium'}}</div>
+            <div>Start Time (Out filter): {{ctrl.startTime | timeAgo:true}}</div>
+            <div>someTimeAgo: {{ctrl.someTimeAgo | date: 'short'}}</div>
+            <div>someTimeAgo (Our filter): {{ctrl.someTimeAgo | timeAgo:true}}</div>
         </div>
     </div>
 
@@ -68,6 +70,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="scripts/filtersApp/filtersApp.js"></script>
     <script src="scripts/filtersApp/FilterController.js"></script>
+    <script src="scripts/filtersApp/timeAgo.js"></script>
 </body>
 
 </html>
