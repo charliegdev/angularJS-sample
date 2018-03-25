@@ -73,9 +73,19 @@ router.post('/login', function(req, res) {
     res.send({msg: 'Login successful for ' + req.body.username});
 });
 
-router.get("/hasAccess", (req, res) => {
-    res.send(true);
-})
+const alternateResponse = (() => {
+    let previousSuccess = true;
+
+    return (req, res) => {
+        const msg = previousSuccess ? "Sorry login failed." : "Welcome!",
+            code = previousSuccess ? 404 : 200;
+
+        res.send({ msg }, code);
+        previousSuccess = !previousSuccess;
+    };
+})();
+
+router.get("/hasAccess", alternateResponse);
 
 app.use('/api', router);
 

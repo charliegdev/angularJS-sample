@@ -8,10 +8,14 @@ angular.module("routingApp", ["ngRoute"])
             .when("/second", {
                 template: "<h1>Protected Page</h1>",
                 resolve: {
-                    immediate: ["Constant", Constant => Constant.MAGIC_NUMBER * 4],
-                    async: ["$http", $http => $http.get("/api/hasAccess")]
+                    immediate: ["Constant", Constant => false ],
+                    async: ["$http", $http => $http.get("/api/hasAccess").then(response => response.data)]
                 },
                 controller: "SecondController as secCtrl"
+            })
+            .when("/detail/:detId", {
+                template: "<h2>Loaded {{detCtrl.detailId}} and query String is: {{detCtrl.qStr}} {{detCtrl.testStr}}</h2>",
+                controller: "DetailController as detCtrl"
             })
             .otherwise({ redirectTo: "/"});
     }]);
