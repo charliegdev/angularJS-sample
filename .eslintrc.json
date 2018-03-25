@@ -30,7 +30,10 @@
         "no-var": "error",
         "prefer-const": "error",
         "no-console": "off",
-        "angular/file-name": 2,
+        "angular/file-name": [2, { 
+            "typeSeparator": "dash",
+            "ignoreTypeSuffix": true
+        }],
         "angular/controller-as-vm": "off"
     },
     "globals": {

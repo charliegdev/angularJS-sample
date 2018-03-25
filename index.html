@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="filtersApp">
+<html lang="en" ng-app="filtersModule">
 
 <head>
     <meta charset="utf-8">
@@ -57,20 +57,23 @@
             <h1>Hello Filters!</h1>
             <br><br>
 
-            <div>Start Time (Timestamp): {{ctrl.startTime}}</div>
-            <div>Start Time (DateTime): {{ctrl.startTime | date:'medium'}}</div>
-            <div>Start Time (Out filter): {{ctrl.startTime | timeAgo:true}}</div>
-            <div>someTimeAgo: {{ctrl.someTimeAgo | date: 'short'}}</div>
-            <div>someTimeAgo (Our filter): {{ctrl.someTimeAgo | timeAgo:true}}</div>
+            <ul class="list-group">
+                <li class="list-group-item">Start Time (Timestamp): {{ctrl.startTime}}</li>
+                <li class="list-group-item">Start Time (DateTime): {{ctrl.startTime | date:'medium'}}</li>
+                <li class="list-group-item">Start Time (Out filter): {{ctrl.startTime | timeAgo}}</li>
+                <li class="list-group-item">someTimeAgo: {{ctrl.someTimeAgo | date: 'short'}}</li>
+                <li class="list-group-item">someTimeAgo (Our filter): {{ctrl.someTimeAgo | timeAgo:true}}</li>
+            </ul>
+            
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="scripts/filtersApp/filtersApp.js"></script>
-    <script src="scripts/filtersApp/FilterController.js"></script>
-    <script src="scripts/filtersApp/timeAgo.js"></script>
+    <script src="scripts/filtersApp/filters-module.js"></script>
+    <script src="scripts/filtersApp/Filter-controller.js"></script>
+    <script src="scripts/filtersApp/timeAgo-filter.js"></script>
 </body>
 
 </html>
