@@ -34,7 +34,6 @@ router.post('/note', function(req, res) {
     res.send(note);
 });
 
-
 router.post('/note/:id/done', function(req, res) {
     let note = null;
     for (let i = 0; i < notes.length; i++) {
@@ -74,10 +73,11 @@ router.post('/login', function(req, res) {
     res.send({msg: 'Login successful for ' + req.body.username});
 });
 
+router.get("/hasAccess", (req, res) => {
+    res.send(true);
+})
 
 app.use('/api', router);
-
-
 
 app.listen(8000);
 console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
