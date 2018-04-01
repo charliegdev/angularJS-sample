@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-3">
-        <strong>Name:</strong> {{stock.name}}
+        <strong>Name:</strong> {{stockData.name}}
     </div>
     <div class="col-3">
-        <strong>Price:</strong> {{stock.price}}
+        <strong>Price:</strong> {{stockData.price | currency}}
     </div>
     <div class="col-3">
-        <strong>Previous:</strong> {{stock.previous}}
+        <strong>Previous:</strong> {{stockData.previous | currency}}
     </div>
     <div class="col-3">
-        <strong>Change:</strong> {{getChangePercent(stock)}}
+        <strong>Change:</strong> {{getChangePercent(stockData)}}
     </div>
 </div>

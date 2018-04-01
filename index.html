@@ -59,8 +59,8 @@
         <div ng-controller="MainController as mainCtrl">
             <h3>List of Stocks</h3>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="stock in mainCtrl.stocks">
-                    <stock-widget></stock-widget>
+                <li class="list-group-item" ng-repeat="s in mainCtrl.stocks">
+                    <stock-widget stock-data="s"></stock-widget>
                 </li>
             </ul>
         </div>
