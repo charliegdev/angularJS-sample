@@ -7,4 +7,12 @@ angular.module("stockMarketApp").controller("MainController", [function () {
     ];
 
     this.currentTab = "tab1";
+    this.changeAllStocks = () => { 
+        for (let i = 0; i < this.stocks.length; i++) {
+            this.stocks[i] = { name: "Controller Stock", price: 200, previous: 250 };
+        }
+    };
+
+    // this.changeFirstStock = () => { this.stocks[0].name = 'Changed First Stock'; };
+    this.changeFirstStock = () => { this.stocks[0] = { name: 'Changed First Stock', price: 50000, previous: 200 }; };
 }]);
