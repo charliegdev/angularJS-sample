@@ -60,7 +60,7 @@
             <h3>List of Stocks</h3>
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="stock in mainCtrl.stocks">
-                    <div ng-include="mainCtrl.stockTemplateUrl"></div>
+                    <stock-widget></stock-widget>
                 </li>
             </ul>
         </div>
@@ -71,6 +71,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="scripts/stockMarketApp/stockMarketApp-module.js"></script>
     <script src="scripts/stockMarketApp/Main-controller.js"></script>
+    <script src="scripts/stockMarketApp/stockWidget-directive.js"></script>
 </body>
 
 </html>
