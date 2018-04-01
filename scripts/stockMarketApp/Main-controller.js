@@ -9,4 +9,6 @@ angular.module("stockMarketApp").controller("MainController", [function () {
     this.stockTemplateUrl = "scripts/stockMarketApp/stock.html";
 
     this.getChangePercent = stock => Math.ceil((stock.price - stock.previous) / stock.previous * 100) + "%";
+
+    this.currentTab = "tab1";
 }]);
