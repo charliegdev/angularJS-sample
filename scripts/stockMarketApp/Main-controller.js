@@ -6,7 +6,6 @@ angular.module("stockMarketApp").controller("MainController", [function () {
         { name: "4th Stock", price: 400, previous: 420 }
     ];
 
-    this.stockTemplateUrl = "scripts/stockMarketApp/stock.html";
+    this.onStockSelect = (price, name) => { console.log("Selected price ", price, "Name", name); };
 
-    this.getChangePercent = stock => Math.ceil((stock.price - stock.previous) / stock.previous * 100) + "%";
 }]);

@@ -1,14 +1,12 @@
 <div class="row">
     <div class="col-3">
-        <strong>Name:</strong> {{stock.name}}
+        <strong>Name:</strong> {{stockTitle}}
     </div>
     <div class="col-3">
-        <strong>Price:</strong> {{stock.price}}
+        <strong>Price:</strong> {{stockData.price | currency}}
     </div>
     <div class="col-3">
-        <strong>Previous:</strong> {{stock.previous}}
+        <strong>Change:</strong> {{getChangePercent(stockData)}}
     </div>
-    <div class="col-3">
-        <strong>Change:</strong> {{mainCtrl.getChangePercent(stock)}}
-    </div>
+    <button class="col-3 btn btn-primary" ng-click="onSelect()">Select me</button>
 </div>
