@@ -6,4 +6,6 @@ angular.module("stockMarketApp").controller("MainController", [function () {
         { name: "4th Stock", price: 400, previous: 420 }
     ];
 
+    this.onStockSelect = (price, name) => { console.log("Selected price ", price, "Name", name); };
+
 }]);

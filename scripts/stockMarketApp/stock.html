@@ -1,15 +1,12 @@
 <div class="row">
     <div class="col-3">
-        <strong>Name:</strong> {{stockData.name}}
+        <strong>Name:</strong> {{stockTitle}}
     </div>
-    <div class="col-2">
+    <div class="col-3">
         <strong>Price:</strong> {{stockData.price | currency}}
     </div>
-    <div class="col-2">
-        <strong>Previous:</strong> {{stockData.previous | currency}}
-    </div>
-    <div class="col-2">
+    <div class="col-3">
         <strong>Change:</strong> {{getChangePercent(stockData)}}
     </div>
-    <button class="col-3 btn btn-primary" ng-click="changeStock()">Change Stock in Directive</button>
+    <button class="col-3 btn btn-primary" ng-click="onSelect()">Select me</button>
 </div>

@@ -57,7 +57,7 @@
             <h3>List of Stocks</h3>
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="s in mainCtrl.stocks track by $index">
-                    <stock-widget stock-data="s"></stock-widget>
+                    <stock-widget stock-data="s" stock-title="Stock {{$index}}. {{s.name}}" when-select="mainCtrl.onStockSelect(stockPrice, stockName)"></stock-widget>
                 </li>
             </ul>
 
