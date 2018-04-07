@@ -23,6 +23,8 @@ module.exports = function (config) {
             'scripts/serverApp/!(serverApp).js',
             'scripts/filtersApp/filters-module.js',
             'scripts/filtersApp/!(filters-module).js',
+            'scripts/stockMarketApp/stockMarketApp-module.js',
+            'scripts/stockMarketApp/!(stockMarketApp-module).js',
             'tests/notesAppSpecs/notesAppMocks.js',
             'tests/notesAppSpecs/ItemService.js',
             'tests/notesAppSpecs/*Spec.js',
@@ -30,6 +32,7 @@ module.exports = function (config) {
             'tests/notesApp1Specs/*Spec.js',
             'tests/serverAppSpecs/*Spec.js',
             'tests/filtersAppSpecs/*Spec.js',
+            'tests/stockMarketAppSpecs/*Spec.js'
         ],
 
         // list of files / patterns to exclude
